@@ -1,0 +1,22 @@
+{
+  "name": "githubgraph",
+  "version": "0.0.0",
+  "authors": [
+    "RobertBroersma <Robert_broersma@hotmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.5.5",
+    "jquery": "~2.1.3",
+    "grunt-contrib-less": "~1.0.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt": "~0.4.5"
+  }
+}
