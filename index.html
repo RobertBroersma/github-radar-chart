@@ -1,31 +1,78 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <head>
-    <link rel="stylesheet" type="text/css" href="css\reset.css" />
-    <link rel="stylesheet" type="text/css" href="css\style.css" />
+    <link rel="stylesheet" href="bower_components/nanoscroller/bin/css/nanoscroller.css" />
 
-    <script src="bower_components\d3\d3.min.js"></script>
-    <script src="bower_components\jquery\dist\jquery.min.js" ></script>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <link rel="stylesheet" type="text/css" href="bower_components/fontawesome/css/font-awesome.min.css" />
+
+    <script src="bower_components/d3/d3.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js" ></script>
+    <script src="bower_components/nanoscroller/bin/javascripts/jquery.nanoscroller.min.js" ></script>
+
     <script src="scripts/radar-chart.js" ></script>
     <script src="scripts/radar.js" ></script>
+
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script src="scripts/asterPlot.js" ></script>
+
     <script src="scripts/ui.js" ></script>
 </head>
 <body>
-    <main class="cd-main-content">
-        <div class="radar-container" >
+    <div class="bar-panel from-left nano" >
+        <h1>Cities</h1>
+        <span class="subtitle"> % of all commits in these cities</span>
+        <div class="cities nano-content" ></div>
+    </div>
+
+    <main class="main-content">
+        <div class="toolbar" >
+            <div class="switch">
+                <input type="radio" class="switch-input" name="rel-abs" value="relative" id="relative" checked>
+                <label for="relative" class="switch-label switch-label-off">Relative</label>
+
+                <input type="radio" class="switch-input" name="rel-abs" value="absolute" id="absolute" >
+                <label for="absolute" class="switch-label switch-label-on">Absolute</label>
+
+                <span class="switch-selection"></span>
+            </div>
+
+            <div class="switch">
+                <input type="radio" class="switch-input" name="total-temporal" value="total" id="total" checked>
+                <label for="total" class="switch-label switch-label-off">Total</label>
+
+                <input type="radio" class="switch-input" name="total-temporal" value="temporal" id="temporal" >
+                <label for="temporal" class="switch-label switch-label-on">Temporal</label>
+
+                <span class="switch-selection"></span>
+            </div>
+
+            <div class="clearfix" ></div>
+        </div>
+        <div class="container radar-container" >
+        </div>
+        <div class="container aster-container" >
+            <a href="#" class="arrow btn-prev" >
+                <span class="fa fa-chevron-left" ></span>
+            </a>
+
+            <p class='info-message'>Please select at least <span class='highlighted'>1 city</span> and <span class='highlighted'>1 language</span> to compare!</p>
+
+            <a href="#" class="arrow btn-next" >
+                <span class="fa fa-chevron-right" ></span>
+            </a>
+        </div>
+
+        <div class="disclaimer" >
+            <p>Based on commit data from the 1st of January 2012 until the 1st of January 2015 retrieved from Google Bigquery.</p>
         </div>
 	</main>
 
-	<div class="cd-panel from-right">
-		<header class="cd-panel-header">
-			<h1 class="title">Title Goes Here</h1>
-			<a href="#0" class="cd-panel-close">Close</a>
-		</header>
-
-		<div class="cd-panel-container">
-			<div class="cd-panel-content">
-                <div class="bar-chart" ></div>
-			</div> <!-- cd-panel-content -->
-		</div> <!-- cd-panel-container -->
-	</div> <!-- cd-panel -->
+    <div class="bar-panel from-right nano" >
+        <h1>Languages</h1>
+        <span class="subtitle"> % of all commits in these lanuages</span>
+        <div class="languages nano-content" ></div>
+    </div>
 </body>
